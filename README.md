@@ -16,3 +16,8 @@ Neste projeto foram utilizados a seguintes técnologias:
 - JSON Server
 - Styled Componets
 - FrameWork Material - ui
+- React-icons
+
+## Observações
+
+Tinha como objetivo pessoal criar os testes para essa aplicação usando o React Testing Librabry, iniciei o processo, porêm como o prazo para entregar esta resolução era de 24 horas não consegui concluir este objetivo
