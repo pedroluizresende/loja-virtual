@@ -30,6 +30,28 @@ function ShopCart() {
     setCart(newProducts)
   }
 
+  const increaseProductQuantity = (id: number) => {
+    const product = cart.find((product: IProductInCart) => product.id === id)
+    if (product) {
+      product.quantity += 1
+      setCart([...cart])
+      localStorage.setItem('products', JSON.stringify(cart))
+    }
+  }
+
+  const decreaseProductQuantity = (id: number) => {
+    const product = cart.find((product: IProductInCart) => product.id === id)
+    if (product) {
+      if(product.quantity === 1) {
+        removeProductFromCart(id)
+      } else {
+        product.quantity -= 1
+        setCart([...cart])
+        localStorage.setItem('products', JSON.stringify(cart))
+      }
+    }
+  }
+
   const finishiBuying = () => {
     alert('Compra finalizada')
   }
@@ -60,6 +82,8 @@ function ShopCart() {
                 price={ product.price }
                 quantity={ product.quantity }
                 removeProductFromCart={ removeProductFromCart }
+                increaseProductQuantity={ increaseProductQuantity }
+                decreaseProductQuantity={ decreaseProductQuantity }
               />
             ))}
             </CartList>
