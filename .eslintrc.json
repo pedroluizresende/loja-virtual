@@ -1,5 +1,5 @@
 {
-  "extends": ["@typescript-eslint/eslint-plugin"],
+  "extends": ["trybe-frontend"],
   "overrides": [
     {
       "files": ["src/tests/**/*.js"],

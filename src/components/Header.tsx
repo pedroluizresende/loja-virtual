@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom"
+import { CustomHeader, CustomLink } from "../styles/header"
 
 function Header() {
   return (
-    <header>
+    <CustomHeader>
       <h1>Loja Virtual</h1>
       <ol>
-        <li><Link to="/">Produtos</Link></li>
-        <li><Link to="/carrinho">Carrinho</Link></li>
+        <li><CustomLink to="/">Produtos</CustomLink></li>
+        <li><CustomLink to="/carrinho">Carrinho</CustomLink></li>
       </ol>
-    </header>
+    </CustomHeader>
   )
 }
 

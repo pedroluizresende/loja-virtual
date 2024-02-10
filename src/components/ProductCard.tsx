@@ -1,4 +1,5 @@
 import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { Card, CardImage } from "../styles/productCard";
 
 interface ProductCardProps {
   id: number;
@@ -9,11 +10,11 @@ interface ProductCardProps {
 
 function ProductCard({ id, name, price, image }: ProductCardProps) {
   return (
-    <Link to={ `/produto/${id}`}>
-      <img src={image} alt={name} />
-      <h2>{name}</h2>
-      <p>{price}</p>
-    </Link>
+    <Card to={ `/produto/${id}`}>
+      <CardImage src={image} alt={name} />
+      <p>{name}</p>
+      <h2>{`R$ ${price.toFixed(2)}`}</h2>
+    </Card>
   )
 }
 
