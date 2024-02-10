@@ -1,5 +1,5 @@
 {
-  "extends": "trybe-frontend",
+  "extends": ["trybe-frontend"],
   "overrides": [
     {
       "files": ["src/tests/**/*.js"],

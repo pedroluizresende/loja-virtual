@@ -1,4 +1,4 @@
-import styles from 'styled-components'
+import styles from 'styled-components';
 
 export const CustomMain = styles.main`
 display: flex;
@@ -11,7 +11,7 @@ h1 {
   text-align: center;
   margin: 3rem 3rem 0 1rem;
 }
-`
+`;
 
 export const ProductsList = styles.ul`
   display: flex;
@@ -20,4 +20,4 @@ export const ProductsList = styles.ul`
   justify-content: flex-start;
   padding: 2rem 2rem 0 2rem;
   width: 90%;
-`
+`;

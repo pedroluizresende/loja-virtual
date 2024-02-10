@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
-import IProductInCart from '../interfaces/IProductInCart'
-import { CartList, CartSection, CustomMain, ResumeSection } from '../styles/shopCart'
-import { Button } from './products'
-import CartItem from '../components/CartItem'
+import { useEffect, useState } from 'react';
+import Header from '../components/Header';
+import IProductInCart from '../interfaces/IProductInCart';
+import { CartList, CartSection, CustomMain, ResumeSection } from '../styles/shopCart';
+import { Button } from '../styles/products';
+import CartItem from '../components/CartItem';
 
 function ShopCart() {
-  const [cart, setCart] = useState([]as IProductInCart[])
+  const [cart, setCart] = useState<IProductInCart[]>([]);
 
   const fetchCart = () => {
     const productsFromLocalStorage = localStorage.getItem('products')

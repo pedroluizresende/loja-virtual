@@ -15,7 +15,7 @@ export const CustomHeader = styled.header`
   h1 {
     font-size: 1.5rem;
   }
-`
+`;
 
 export const CustomLink = styled(Link)`
   color: #fff;
@@ -25,4 +25,4 @@ export const CustomLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
-`
+`;

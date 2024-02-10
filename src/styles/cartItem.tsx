@@ -23,9 +23,9 @@ export const CartItemDiv = styled.div`
     align-self: center;
     margin-right: 1rem;
   }
-`
+`;
 
-export const InfoSection= styled.section`
+export const InfoSection = styled.section`
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -36,4 +36,4 @@ export const InfoSection= styled.section`
   p {
     font-size: 0.7rem;
   }
-`
+`;

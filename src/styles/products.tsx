@@ -1,11 +1,11 @@
-import styles from 'styled-components'
+import styles from 'styled-components';
 
 export const CustomMain = styles.main`
   display: flex;
   justify-content: center;
   padding: auto;
   margin: 3rem 0;
-`
+`;
 
 export const DetailSection = styles.section`
   margin: 0 auto;
@@ -14,7 +14,7 @@ export const DetailSection = styles.section`
   border-radius: 5px;
   padding: 1rem;
   justify-content: space-around;
-`
+`;
 
 export const DetailImage = styles.img`
   width: 300px;
@@ -22,7 +22,7 @@ export const DetailImage = styles.img`
   border-radius: 5px 5px 0 0;
   border: 1 px solid red;
   align-self: center;
-`
+`;
 export const TextSection = styles.section`
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ export const TextSection = styles.section`
     position: relative;
     bottom: 0;
   }
-`
+`;
 
 export const Button = styles.button`
   width: 50%;
@@ -60,4 +60,4 @@ export const Button = styles.button`
     background-color: #000;
     color: #f4f4f4;
   }
-`
+`;

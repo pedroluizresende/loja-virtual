@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const CustomMain = styled.main`
   display: flex;
@@ -10,7 +10,7 @@ export const CustomMain = styled.main`
   h1 {
     margin: 3rem 0;
   }
-`
+`;
 
 export const CartSection = styled.section`
   display: flex;
@@ -27,7 +27,7 @@ export const CartList = styled.ul`
     max-height: 300px;
     overflow-y: auto;
     min-width: 300px
-`
+`;
 
 export const ResumeSection = styled.section`
   display: flex;
@@ -36,4 +36,4 @@ export const ResumeSection = styled.section`
     padding: 1rem;
     min-height: 300px;
     flex: 1;
-`
+`;

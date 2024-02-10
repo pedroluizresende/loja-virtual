@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Header from "../components/Header"
 import IProduct from "../interfaces/iProduct"
 import IProductInCart from "../interfaces/IProductInCart"
-import { Button, CustomMain, DetailImage, DetailSection, TextSection } from "./products"
+import { Button, CustomMain, DetailImage, DetailSection, TextSection } from "../styles/products"
 
 
 

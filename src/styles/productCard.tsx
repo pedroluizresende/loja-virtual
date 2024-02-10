@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import styles from 'styled-components'
+import { Link } from 'react-router-dom';
+import styles from 'styled-components';
 
 export const Card = styles(Link)`
   list-style: none;
@@ -32,7 +32,7 @@ export const Card = styles(Link)`
     text-align: center;
     margin: 1rem;
   }
-`
+`;
 
 export const CardImage = styles.img`
   width: 200px;
@@ -40,4 +40,4 @@ export const CardImage = styles.img`
   border-radius: 5px 5px 0 0;
   border: 1 px solid red;
   align-self: center;
-`
+`;
