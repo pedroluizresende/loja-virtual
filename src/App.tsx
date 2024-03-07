@@ -4,14 +4,13 @@ import ShopCart from './pages/ShopCart';
 import Product from './pages/Product';
 
 function App() {
-
   return (
     <Routes>
-      <Route path='/' element={<Home/ >} />
-      <Route path='/carrinho' element={<ShopCart />} />
-      <Route path='/produto/:id' element={<Product/>} />
+      <Route path="/" element={ <Home /> } />
+      <Route path="/carrinho" element={ <ShopCart /> } />
+      <Route path="/produto/:id" element={ <Product /> } />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;

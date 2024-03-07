@@ -4,4 +4,4 @@ export default interface IProduct {
   price: number
   description: string
   image: string
-} 
+}

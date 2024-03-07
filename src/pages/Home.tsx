@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import Header from "../components/Header";
-import ProductCard from "../components/ProductCard";
-import { CustomMain, ProductsList } from "../styles/home";
-import IProduct from "../interfaces/iProduct";
-import { Pagination, Stack } from "@mui/material";
+import { useEffect, useState } from 'react';
+import { Pagination, Stack } from '@mui/material';
+import Header from '../components/Header';
+import ProductCard from '../components/ProductCard';
+import { CustomMain, ProductsList } from '../styles/home';
+import IProduct from '../interfaces/iProduct';
 
 function Home() {
   const [products, setProducts] = useState([] as IProduct[]);
@@ -15,11 +15,11 @@ function Home() {
   const fetchProducts = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:3001/produtos");
+      const response = await fetch('http://localhost:3001/produtos');
       const data = await response.json();
       setProducts(data);
-    } catch (error: any) {
-      seError(error.message);
+    } catch (e: any) {
+      seError(e.message);
     } finally {
       setIsLoading(false);
     }
@@ -51,19 +51,20 @@ function Home() {
         <ProductsList>
           {currentProducts.map((product) => (
             <ProductCard
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              image={product.image}
+              data-testid="product-card"
+              key={ product.id }
+              id={ product.id }
+              name={ product.name }
+              price={ product.price }
+              image={ product.image }
             />
           ))}
         </ProductsList>
-        <Stack spacing={2}>
+        <Stack spacing={ 2 }>
           <Pagination
-            count={Math.ceil(products.length / productsPerPage)}
-            page={currentPage}
-            onChange={(event, value) => handleChange(event, value)}
+            count={ Math.ceil(products.length / productsPerPage) }
+            page={ currentPage }
+            onChange={ (event, value) => handleChange(event, value) }
           />
         </Stack>
       </CustomMain>

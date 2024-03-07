@@ -22,7 +22,22 @@ export const CustomLink = styled(Link)`
   text-decoration: none;
   margin: 0 1rem;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
   &:hover {
     text-decoration: underline;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border-radius: 100%;
+    width: 1rem;
+    height: 1rem;
+    color: #e40f0f;
+    display: flex;
+    justify-content: center;
+    margin-left: 0.1rem;
   }
 `;

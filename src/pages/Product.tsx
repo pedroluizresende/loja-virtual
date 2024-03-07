@@ -1,81 +1,86 @@
-import { useEffect, useState } from "react"
-import Header from "../components/Header"
-import IProduct from "../interfaces/iProduct"
-import IProductInCart from "../interfaces/IProductInCart"
-import { Button, CustomMain, DetailImage, DetailSection, TextSection } from "../styles/products"
-
-
+import { useEffect, useState } from 'react';
+import Header from '../components/Header';
+import IProduct from '../interfaces/iProduct';
+import IProductInCart from '../interfaces/IProductInCart';
+import { Button, CustomMain,
+  DetailImage, DetailSection, TextSection } from '../styles/products';
 
 function Product() {
-  const [product, setProduct] = useState({} as IProduct)
-  const [loading, setLoading] = useState(true)
-  const [inCart, setInCart] = useState(false)
+  const [product, setProduct] = useState({} as IProduct);
+  const [loading, setLoading] = useState(true);
   const [addMessage, setAddMessage] = useState('' as string);
+  const [error, setError] = useState('' as string);
 
   const fetchProduct = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const id = window.location.pathname.split('/').pop()
-      const response = await fetch(`http://localhost:3001/produtos/${id}`)
-      const data = await response.json()
-      setProduct(data)
-    } catch (error) {
-      console.log(error)
+      const id = window.location.pathname.split('/').pop();
+      const response = await fetch(`http://localhost:3001/produtos/${id}`);
+      const data = await response.json();
+      setProduct(data);
+    } catch (e) {
+      console.log(error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const addProductToCart = () => {
-    const productsFromLocalStorage = localStorage.getItem('products')
-    const products: IProductInCart[] = productsFromLocalStorage ? JSON.parse(productsFromLocalStorage) : []
-    const productInCart = products.find((p: IProductInCart) => p.id === product.id)
+    const productsFromLocalStorage = localStorage.getItem('products');
+    const products: IProductInCart[] = productsFromLocalStorage
+      ? JSON.parse(productsFromLocalStorage) : [];
+    const productInCart = products.find((p: IProductInCart) => p.id === product.id);
     if (productInCart) {
-      productInCart.quantity++
+      productInCart.quantity++;
     } else {
-      products.push({ ...product, quantity: 1 })
+      products.push({ ...product, quantity: 1 });
     }
-    localStorage.setItem('products', JSON.stringify(products))
-    setAddMessage('Produto adicionado ao carrinho!')
+    localStorage.setItem('products', JSON.stringify(products));
+    setAddMessage('Produto adicionado ao carrinho!');
 
-    const interval = setInterval(() => {
-      setAddMessage('')
-    }
-    , 1000)
+    const interval = setInterval(
+      () => {
+        setAddMessage('');
+      },
+      1000,
+    );
 
     setTimeout(() => {
-      clearInterval(interval)
-    }, 1000)
-  }
+      clearInterval(interval);
+    }, 1000);
+  };
 
   useEffect(() => {
-    fetchProduct()
-  }, [])
+    fetchProduct();
+  }, []);
 
   return (
     <>
-    <Header />
-    <CustomMain>
+      <Header />
+      <CustomMain>
+        {
+          error && <p>{ error }</p>
+        }
         {loading ? (
           <p>Carregando...</p>
-          ) : (
-            <DetailSection>
+        ) : (
+          <DetailSection>
 
-              <DetailImage src={product.image} alt={product.name} />
-              <TextSection>
-                <h1>{product.name}</h1>
-                <p>{product.description}</p>
-                <h2>{`R$: ${product.price.toFixed(3)}`}</h2>
-                <Button onClick={addProductToCart}>Adicionar ao carrinho</Button>
-                {
+            <DetailImage src={ product.image } alt={ product.name } />
+            <TextSection>
+              <h1>{product.name}</h1>
+              <p>{product.description}</p>
+              <h2>{`R$: ${product.price.toFixed(2).replace('.', ',')}`}</h2>
+              <Button onClick={ addProductToCart }>Adicionar ao carrinho</Button>
+              {
                  addMessage.length > 0 && <span>{ addMessage }</span>
                 }
-              </TextSection>
-            </DetailSection>
+            </TextSection>
+          </DetailSection>
         )}
-     </CustomMain>
-      </>
-  )
+      </CustomMain>
+    </>
+  );
 }
 
-export default Product
+export default Product;
